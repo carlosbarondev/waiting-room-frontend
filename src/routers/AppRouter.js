@@ -3,7 +3,7 @@ import {
     Route,
 } from "react-router-dom";
 import { PublicScreen } from "../components/PublicScreen";
-import { NewTicket } from "../components/NewTicket";
+import { Order } from "../components/Order";
 import { Desktop } from "../components/Desktop";
 import { Home } from "../components/Home";
 
@@ -19,10 +19,10 @@ export const AppRouter = () => {
                 }
             />
             <Route
-                path="tickets"
+                path="nuevo-pedido"
                 element=
                 {
-                    <NewTicket />
+                    <Order />
                 }
             />
             <Route

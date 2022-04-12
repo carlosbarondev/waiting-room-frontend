@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import socketIOClient from "socket.io-client";
-import { Col, Image, ListGroup, Row } from "react-bootstrap"
+import { Carousel, Col, ListGroup, Row } from "react-bootstrap"
 
 export const PublicScreen = () => {
 
@@ -22,7 +22,9 @@ export const PublicScreen = () => {
     return (
         checking && <Row className="vh-100 m-0">
             <Col xs={3} className="p-0">
-                <h1 className="centerAll" style={{ "backgroundColor": "grey", "color": "white" }}>En preparación...</h1>
+                <div className="centerAll" style={{ "backgroundColor": "grey", "color": "white", "height": "70px" }}>
+                    <h1>En preparación...</h1>
+                </div>
                 <ListGroup className="text-center">
                     {
                         pending.map(order => (
@@ -32,7 +34,9 @@ export const PublicScreen = () => {
                 </ListGroup>
             </Col>
             <Col xs={3} className="p-0">
-                <h1 className="centerAll" style={{ "backgroundColor": "green", "color": "white" }}>Listo</h1>
+                <div className="centerAll" style={{ "backgroundColor": "green", "color": "white", "height": "70px" }}>
+                    <h1>Listo</h1>
+                </div>
                 <ListGroup className="text-center">
                     {
                         ready.map(order => (
@@ -41,8 +45,30 @@ export const PublicScreen = () => {
                     }
                 </ListGroup>
             </Col>
-            <Col xs={6} className="centerAll">
-                <Image src="https://www.ccrincondelavictoria.com/wp-content/uploads/2020/07/MCDONALDS.jpg" fluid />
+            <Col xs={6} className="mt-5 d-flex justify-content-center">
+                <Carousel className="carouselHome mt-5">
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100"
+                            src="/assets/promo1.jpg"
+                            alt="First slide"
+                        />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100"
+                            src="/assets/promo2.jpg"
+                            alt="Second slide"
+                        />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100"
+                            src="/assets/promo3.jpg"
+                            alt="Third slide"
+                        />
+                    </Carousel.Item>
+                </Carousel>
             </Col>
         </Row>
     )
