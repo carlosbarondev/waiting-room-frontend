@@ -4,7 +4,7 @@ import {
 } from "react-router-dom";
 import { PublicScreen } from "../components/PublicScreen";
 import { Order } from "../components/Order";
-import { Desktop } from "../components/Desktop";
+import { Table } from "../components/Table";
 import { Home } from "../components/Home";
 
 export const AppRouter = () => {
@@ -26,10 +26,10 @@ export const AppRouter = () => {
                 }
             />
             <Route
-                path="escritorio"
+                path="mesa/:table"
                 element=
                 {
-                    <Desktop />
+                    <Table />
                 }
             />
             <Route

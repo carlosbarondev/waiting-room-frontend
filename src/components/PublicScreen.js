@@ -13,7 +13,7 @@ export const PublicScreen = () => {
         socket.on("current-status", data => {
             setReady(data);
         });
-        socket.on("pending-tickets", data => {
+        socket.on("pending-orders", data => {
             setPending(data);
             setChecking(true);
         });
@@ -46,7 +46,7 @@ export const PublicScreen = () => {
                 </ListGroup>
             </Col>
             <Col xs={6} className="mt-5 d-flex justify-content-center">
-                <Carousel className="carouselHome mt-5">
+                <Carousel className="carouselHome mt-5" interval={2500}>
                     <Carousel.Item>
                         <img
                             className="d-block w-100"
