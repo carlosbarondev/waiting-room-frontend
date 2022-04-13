@@ -23,7 +23,6 @@ export const Order = () => {
     const createOrder = () => {
         const socket = socketIOClient(process.env.REACT_APP_NODE, { transports: ['websocket'] });
         socket.emit('next-order', null, (order) => {
-            console.log(order)
             setLastOrder(order);
         });
     }
