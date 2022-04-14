@@ -26,7 +26,7 @@ export const Table = () => {
         });
 
         socket.on('pending-orders', (pending) => {
-            setPending(pending);
+            setPending(pending.filter(order => order.table === null));
             setChecking(true);
         });
 
@@ -53,7 +53,6 @@ export const Table = () => {
             });
 
             socket.emit('attend-order', { table }, (payload) => {
-                console.log(payload)
                 if (!payload.ok) {
                     setOrder("Ninguno");
                 } else {
@@ -64,7 +63,6 @@ export const Table = () => {
         } else {
             if (pending.length !== 0) {
                 socket.emit('attend-order', { table }, (payload) => {
-                    console.log(payload)
                     if (!payload.ok) {
                         setOrder("Ninguno");
                     } else {
@@ -85,10 +83,12 @@ export const Table = () => {
                 <h1 className="mt-4">Mesa {table}</h1>
                 <hr />
                 <h1>Preparar pedido: {order}</h1>
-                <h1>Cola: {pending.length - 1 >= 0 ? pending.length - 1 : 0}</h1>
+                <h1>Cola: {pending.length >= 0 ? pending.length : 0}</h1>
                 <Button
                     onClick={handleClick}
                     disabled={buttonState}
+                    variant={order === "Ninguno" ? "danger" : "success"}
+                    size="lg"
                 >
                     {order === "Ninguno" ? "Atender siguiente pedido" : "Pedido completado"}
                 </Button>
