@@ -29,12 +29,13 @@ export const Order = () => {
 
     return (
         <div className="vh-100 centerAll flex-column" style={{ "backgroundColor": "#6951F0" }}>
-            <h1 className="mb-5" style={{ "color": "white" }}><strong>{lastOrder ? `Pedido ${lastOrder}` : "Cargando..."}</strong></h1>
+            <h1 className="mb-5" style={{ "color": "white", "fontSize": "48px" }}><strong>{lastOrder ? `Creado Pedido ${lastOrder}` : "Cargando..."}</strong></h1>
             <Button
                 disabled={buttonState}
                 className="mt-5"
                 variant="secondary"
                 onClick={createOrder}
+                size="lg"
             >
                 Crear nuevo pedido
             </Button>

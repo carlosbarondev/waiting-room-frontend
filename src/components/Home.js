@@ -34,7 +34,7 @@ export const Home = () => {
                     </Button>
                 </ListGroup.Item>
                 <ListGroup.Item className="mt-3 border-0">
-                    <h5>Los pedidos se reparten en las mesas disponibles de la cocina para su preparación</h5>
+                    <h5>Los pedidos se reparten en las distintas mesas de la cocina para su preparación</h5>
                     <Form.Select className="selectHome" aria-label="Default select example" onClick={(e) => setTable(e.target.value)}>
                         <option>Seleccione una mesa</option>
                         <option value="1">Mesa 1</option>

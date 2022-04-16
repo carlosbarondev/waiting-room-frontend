@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Navigate, useParams } from "react-router-dom";
 import socketIOClient from "socket.io-client";
-import { Button, Container } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import Swal from "sweetalert2";
 
 export const Table = () => {
@@ -80,18 +80,27 @@ export const Table = () => {
     return (
         (table === "1" || table === "2" || table === "3")
             ? checking && <Container>
-                <h1 className="mt-4">Mesa {table}</h1>
+                <h1 className="mt-4" style={{ "fontSize": "55px" }}>Mesa {table}</h1>
                 <hr />
-                <h1>Preparar pedido: {order}</h1>
-                <h1>Cola: {pending.length >= 0 ? pending.length : 0}</h1>
-                <Button
-                    onClick={handleClick}
-                    disabled={buttonState}
-                    variant={order === "Ninguno" ? "danger" : "success"}
-                    size="lg"
-                >
-                    {order === "Ninguno" ? "Atender siguiente pedido" : "Pedido completado"}
-                </Button>
+                <Row>
+                    <Col xs={8} className="centerAll flex-column" style={{ "backgroundColor": "#00FA9A", "height": "200px" }}>
+                        <h1 style={{ "fontSize": "50px" }}><strong>Preparar pedido</strong></h1>
+                        <h1 style={{ "fontSize": "50px" }}><strong>{order}</strong></h1>
+                    </Col>
+                    <Col xs={4} className="centerAll flex-column" style={{ "backgroundColor": "#E9967A", "height": "200px" }}>
+                        <h1 style={{ "fontSize": "50px" }}><strong>Cola</strong></h1>
+                        <h1 style={{ "fontSize": "50px" }}><strong>{pending.length >= 0 ? pending.length : 0}</strong></h1>
+                    </Col>
+                    <Button
+                        className="mt-4"
+                        onClick={handleClick}
+                        disabled={buttonState}
+                        variant={order === "Ninguno" ? "danger" : "success"}
+                        style={{ "height": "56px", "fontSize": "22px" }}
+                    >
+                        {order === "Ninguno" ? "Atender siguiente pedido" : "Pedido completado"}
+                    </Button>
+                </Row>
             </Container>
             : <Navigate to="/" replace={true} />
     )
