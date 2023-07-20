@@ -2,7 +2,7 @@
 
 Interfaz de usuario, de un establecimiento de comida rápida, construida con React.
 
-[VISTA PREVIA](https://waiting-room-carlosbarondev.up.railway.app/) *(El servidor arranca en 10 segundos aproximadamente)*
+[VISTA PREVIA](https://waiting-room-carlosbarondev.onrender.com/)
 
 [Backend](https://github.com/carlosbarondev/waiting-room-backend)
 
@@ -38,5 +38,5 @@ Interfaz de usuario, de un establecimiento de comida rápida, construida con Rea
 
 ## Links
 
-* [Website](https://waiting-room-carlosbarondev.up.railway.app/) *(El servidor arranca en 10 segundos aproximadamente)*
+* [Website](https://waiting-room-carlosbarondev.onrender.com/)
 * [Backend](https://github.com/carlosbarondev/waiting-room-backend)
